@@ -4,107 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Jhefferson David Daquilema Pullay</title>
+
     <style>
-        /* Estilos generales para el cuerpo de la página */
+        /* ===== ESTILOS GENERALES ===== */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9; /* Fondo muy claro (gris azulado suave) */
-            color: #333; /* Color de texto principal (gris oscuro) */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e3f2fd, #f4f6f9);
             margin: 0;
-            padding: 20px;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        /* Contenedor principal del CV para centrar y dar un tamaño fijo */
-        .cv-container {
-            max-width: 900px; /* Ancho máximo para el contenido del CV */
-            margin: 40px auto; /* Centrar el contenedor en la página */
-            background-color: #ffffff; /* Fondo blanco para el CV */
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
             padding: 30px;
-            text-align: left; /* Alinear el contenido del CV a la izquierda */
+            color: #333;
         }
 
-        /* Estilos para el encabezado principal */
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .cv-container {
+            max-width: 950px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* ===== HEADER ===== */
         header {
+            background: linear-gradient(135deg, #007bff, #00b4db);
+            color: #fff;
+            padding: 35px 20px;
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #007bff; /* Separador azul */
-            margin-bottom: 20px;
         }
 
         header h1 {
-            color: #007bff; /* Azul primario */
-            font-size: 2.5em;
             margin: 0;
-            margin-bottom: 5px;
+            font-size: 2.6em;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-style: italic;
-            color: #666;
-            margin: 0;
+            margin: 6px 0;
+            font-size: 1.1em;
+            opacity: 0.95;
         }
 
-        /* Estilos para las secciones del CV */
+        .age {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        /* ===== CONTENIDO ===== */
+        .content {
+            padding: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* ===== SECCIONES ===== */
         .section {
-            margin-bottom: 25px;
+            background: #fafafa;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
         }
 
         .section h2 {
-            color: #28a745; /* Verde para los títulos de sección */
-            border-bottom: 2px solid #28a745;
-            padding-bottom: 5px;
             margin-top: 0;
-            font-size: 1.5em;
+            color: #007bff;
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+            font-size: 1.4em;
         }
 
-        /* Estilos para los elementos de lista (para educación y experiencia) */
+        /* ===== LISTAS ===== */
         ul {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 15px 0 0;
         }
 
         ul li {
             margin-bottom: 15px;
-            padding-left: 20px;
+            padding-left: 18px;
             position: relative;
         }
 
-        /* Decoración de bullet point */
         ul li::before {
-            content: '•';
-            color: #007bff;
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #28a745;
             font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
         }
 
-        /* Estilo para los nombres de instituciones/empresas */
         .institution-name {
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            color: #222;
         }
 
-        /* Estilo para los títulos/cargos */
         .title-role {
+            display: block;
             font-style: italic;
             color: #555;
-            display: block;
+            margin-top: 2px;
         }
 
-        /* Estilo para la edad */
-        .age {
-            font-weight: bold;
-            color: #cc0000; /* Rojo para destacar la edad */
+        /* ===== HABILIDADES ===== */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
         }
 
+        .skill {
+            background: linear-gradient(135deg, #28a745, #5fd38d);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ANIMACIÓN ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div class="cv-container">
         <header>
@@ -113,51 +161,57 @@
             <p>Edad: <span class="age">22 años</span></p>
         </header>
 
-        <div class="section">
-            <h2>Educación</h2>
-            <ul>
-                <li>
-                    <span class="institution-name">Universidad Técnica de Cotopaxi (UTC)</span>
-                    <span class="title-role">Estudios Superiores Sistemas de infomracion </span>
-                </li>
-                <li>
-                    <span class="institution-name">Unidad Educativa Alosai</span>
-                    <span class="title-role">Bachillerato</span>
-                </li>
-            </ul>
-        </div>
+        <div class="content">
+            <!-- EDUCACIÓN -->
+            <div class="section">
+                <h2>Educación</h2>
+                <ul>
+                    <li>
+                        <span class="institution-name">Universidad Técnica de Cotopaxi (UTC)</span>
+                        <span class="title-role">Estudios Superiores en Sistemas de Información</span>
+                    </li>
+                    <li>
+                        <span class="institution-name">Unidad Educativa Alosai</span>
+                        <span class="title-role">Bachillerato</span>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Experiencia y Prácticas</h2>
-            <ul>
-                <li>
-                    <span class="institution-name">Municipio de Latacunga</span>
-                    <span class="title-role">Prácticas en el Área de TICs</span>
-                    <p>Funciones: Asistencia técnica y soporte en el departamento de tecnologías de la información.</p>
-                </li>
-                <li>
-                    <span class="institution-name">Biblioteca de la Universidad</span>
-                    <span class="title-role">Prácticas o Asistencia</span>
-                    <p>Funciones: Colaboración en el manejo y organización de recursos, soporte tecnológico a usuarios.</p>
-                </li>
-                <li>
-                    <span class="institution-name">Municipio de Saquisilí</span>
-                    <span class="title-role">Prácticas Pre-Profesionales (LVOLARES) - Departamento de TICs</span>
-                    <p>Funciones: Soporte en infraestructura tecnológica, mantenimiento de equipos y asistencia a usuarios internos.</p>
-                </li>
-            </ul>
-        </div>
+            <!-- EXPERIENCIA -->
+            <div class="section">
+                <h2>Experiencia y Prácticas</h2>
+                <ul>
+                    <li>
+                        <span class="institution-name">Municipio de Latacunga</span>
+                        <span class="title-role">Prácticas – Área de TICs</span>
+                        <p>Soporte técnico y asistencia en tecnologías de la información.</p>
+                    </li>
+                    <li>
+                        <span class="institution-name">Biblioteca Universitaria</span>
+                        <span class="title-role">Asistencia Técnica</span>
+                        <p>Gestión de recursos y soporte tecnológico a usuarios.</p>
+                    </li>
+                    <li>
+                        <span class="institution-name">Municipio de Saquisilí</span>
+                        <span class="title-role">Prácticas Pre-Profesionales – TICs</span>
+                        <p>Mantenimiento de equipos e infraestructura tecnológica.</p>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Habilidades Clave</h2>
-            <ul>
-                <li><span class="institution-name">Soporte Técnico y Mantenimiento de Hardware</span></li>
-                <li><span class="institution-name">Manejo de Sistemas Operativos y Redes</span></li>
-                <li><span class="institution-name">Conocimientos de HTML (Demostrado en este código)</span></li>
-                <li><span class="institution-name">Atención al Cliente y Usuarios (Adquirida en prácticas)</span></li>
-            </ul>
+            <!-- HABILIDADES -->
+            <div class="section" style="grid-column: span 2;">
+                <h2>Habilidades Clave</h2>
+                <div class="skills">
+                    <div class="skill">Soporte Técnico</div>
+                    <div class="skill">Mantenimiento de Hardware</div>
+                    <div class="skill">Sistemas Operativos</div>
+                    <div class="skill">Redes Básicas</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">Atención al Usuario</div>
+                </div>
+            </div>
         </div>
-
     </div>
 </body>
 </html>
